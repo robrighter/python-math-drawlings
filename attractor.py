@@ -45,6 +45,11 @@ def setup_turtle():
     return t
 
 
+def draw(t):
+    t.x, t.y, t.z = 0.1, 0.0, 0.0
+    t.speed(0)
+    draw_lorenz_attractor(t)
+
 # --- Attractor Logic ---
 def draw_lorenz_attractor(t):
     """Calculates and draws the Lorenz attractor."""

@@ -16,6 +16,10 @@ tree.down()
 tree.color("black")
 
 # Recursive function to draw tree
+
+def draw(t):
+    draw_branch(tree, 5, 1)
+
 def draw_branch(t, branch_length, thickness):
     if branch_length < 5:
         # Draw a leaf
