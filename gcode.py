@@ -76,7 +76,7 @@ def main():
         t.update()
 
         # Generate the G-Code
-        gcode_output = t.write_gcode(args.width, args.height, penup_command = "M03", pendown_command = "M05")
+        gcode_output = t.write_gcode(args.width, args.height, penup_command = "M03", pendown_command = "M05", allow_rotation = True)
 
         # Split the generated G-Code
         gcode_lines = gcode_output.strip().split('\n')
