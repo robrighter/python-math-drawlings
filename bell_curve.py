@@ -31,6 +31,11 @@ def draw_bell_curve(start, end, magnitude, turt, steps=100):
             turt.pendown()
         else:
             turt.goto(x, y)
+
+def go_to_start(turt):
+    turt.penup()
+    turt.goto(start_point)
+    turt.pendown()
     
 def draw(turt):
     n = 20
@@ -44,6 +49,9 @@ def draw(turt):
     function2 = lambda x: b * math.pow(c2, x)
     function3 = lambda x: d * math.sin(x + c3)
     combination = lambda x: function1(x) + function2(x)
+    go_to_start(turt)
     for i in range(1, n, 1):
         draw_bell_curve(start_point, end_point, combination(i), turt, steps=100*i)
+        go_to_start(turt)
         draw_bell_curve(start_point, end_point, -1 * combination(i), turt, steps=100*i)
+        go_to_start(turt)
