@@ -84,11 +84,11 @@ def draw_lorenz_attractor(t):
             # t.pencolor(colors[color_index])
 
         # Update the screen in batches to speed up the drawing
-        if i % 500 == 0:
-            turtle.update()
+        # if i % 500 == 0:
+        #    turtle.update()
 
     # Final update to show the complete drawing
-    turtle.update()
+    # turtle.update()
     print("Attractor drawing complete.")
 
 

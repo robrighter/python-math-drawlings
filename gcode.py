@@ -15,7 +15,7 @@ import argparse
 import importlib.util
 import sys
 import io
-from turtle_gcode import Turtle
+import turtle_gcode as t
 
 def main():
     """
@@ -66,12 +66,15 @@ def main():
             sys.exit(1)
 
         # Create a turtle instance from the turtle-gcode library
-        t = Turtle()
+        t.setup(800,800,0,0)
         t.speed(0)
+        t.tracer(0,0)
 
 
         # Execute the user's drawing function
         draw_func(t)
+        t.update()
+
         # Generate the G-Code
         gcode_output = t.write_gcode(args.width, args.height)
 
