@@ -37,13 +37,13 @@ def main():
     parser.add_argument(
         '--width',
         type=int,
-        default=100,
+        default=410,
         help='The width of the printable area.'
     )
     parser.add_argument(
         '--height',
         type=int,
-        default=100,
+        default=300,
         help='The height of the printable area.'
     )
 
@@ -76,7 +76,7 @@ def main():
         t.update()
 
         # Generate the G-Code
-        gcode_output = t.write_gcode(args.width, args.height)
+        gcode_output = t.write_gcode(args.width, args.height, penup_command = "M03", pendown_command = "M05")
 
         # Split the generated G-Code
         gcode_lines = gcode_output.strip().split('\n')
