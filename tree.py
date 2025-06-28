@@ -17,9 +17,9 @@ tree.color("black")
 
 # Recursive function to draw tree
 def draw_branch(t, branch_length, thickness):
-    if branch_length < 10:
+    if branch_length < 5:
         # Draw a leaf
-        t.color("black")
+        t.color("pink")
         t.begin_fill()
         t.circle(2 + random.random() * 2)
         t.end_fill()
@@ -47,7 +47,7 @@ def draw_branch(t, branch_length, thickness):
     t.pendown()
 
 # Draw the tree
-draw_branch(tree, 100, 7)
+draw_branch(tree, 5, 1)
 
 # Keep window open
 screen.mainloop()
