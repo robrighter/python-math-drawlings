@@ -29,6 +29,16 @@ def draw_fractal_star(size, t):
         # 144 degrees is the external angle of a 5-pointed star.
         t.right(144)
 
+def draw(t):
+    # --- Initial Positioning ---
+    t.penup()
+    t.goto(-100, 50)  # Position the turtle to start
+    t.pendown()
+
+    # --- Start Drawing ---
+    initial_size = 200
+    draw_fractal_star(initial_size, t)
+
 
 def main():
     """
@@ -36,23 +46,14 @@ def main():
     """
     # --- Screen Setup ---
     screen = turtle.Screen()
-    screen.bgcolor("black")
-    screen.title("Fractal Star")
+
 
     # --- Turtle Setup ---
     t = turtle.Turtle()
     t.speed(0)  # Set speed to maximum
-    t.color("yellow")
     t.hideturtle()
 
-    # --- Initial Positioning ---
-    t.penup()
-    t.goto(-100, 50) # Position the turtle to start
-    t.pendown()
-
-    # --- Start Drawing ---
-    initial_size = 200
-    draw_fractal_star(initial_size, t)
+    draw(t)
 
     # --- Finish ---
     screen.exitonclick()

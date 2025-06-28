@@ -58,7 +58,7 @@ def hilbert_B(level, angle, step, t):
 
 def draw(t):
     # --- Curve Parameters ---
-    level = 4
+    level = 6
     size = 500  # Overall size of the curve's bounding box
     # Calculate the step size based on the level and overall size
     step = size / (2 ** level - 1)
@@ -90,23 +90,7 @@ def main():
     t.hideturtle()
     t.pensize(1)
 
-    # --- Curve Parameters ---
-    level = 4
-    size = 500 # Overall size of the curve's bounding box
-    # Calculate the step size based on the level and overall size
-    step = size / (2**level - 1)
-    angle = 90
-
-    # --- Initial Positioning ---
-    t.penup()
-    # Position the turtle at the lower-left corner of the drawing area.
-    # The turtle starts facing East (0 degrees) by default.
-    t.goto(-size / 2, -size / 2)
-    t.pendown()
-
-    # --- Start Drawing ---
-    # We start with hilbert_A to get the upward-opening curve.
-    hilbert_A(level, angle, step, t)
+    draw(t)
 
     # --- Finish ---
     screen.exitonclick()
